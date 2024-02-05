@@ -1,0 +1,35 @@
+/* Updated Table Styles */
+table {
+  border: 1px solid black;
+  width: auto;
+  table-layout: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px; /* Add rounded corners */
+  overflow: hidden; /* Hide overflowing content for a mirror effect */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); /* Add a subtle mirror effect */
+  box-shadow: 0 0 10px rgba(4, 170, 109, 0.8), 0 0 20px rgba(2, 141, 248, 0.6), 0 0 30px rgba(4, 170, 109, 0.4); /* Add a glowing neon effect */
+  transition: box-shadow 0.3s ease; /* Add a smooth transition effect */
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+  white-space: nowrap;
+}
+
+th {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hover effect for the table */
+table:hover {
+  box-shadow: 0 0 20px rgba(4, 170, 109, 1), 0 0 30px rgba(4, 170, 109, 0.8), 0 0 40px rgba(4, 170, 109, 0.6);
+}

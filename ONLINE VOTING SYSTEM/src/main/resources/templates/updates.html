@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8" />
+    <title>Election Updates</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            text-decoration: underline;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        h2::before {
+            content: '\2022'; /* Bullet point Unicode character */
+            color: #555;
+            margin-right: 10px;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        h3 {
+            color: rgb(100, 30, 221);
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section>
+
+            <h1>Election Updates</h1>
+            <h2>• Results will be given soon</h2>
+            <h2>• For Nominations, submit profiles to the admin for elections directly</h2>
+
+            <div th:if="${session.msg}">
+                <h3 th:text="${session.msg}" style="color:red"></h3>
+                <div th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}"></div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Candidate 1 Votes</th>
+                        <th scope="col">Candidate 2 Votes</th>
+                        <th scope="col">Candidate 3 Votes</th>
+                        <th scope="col">Candidate 4 Votes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Display total votes for each candidate -->
+                    <tr>
+                        <td th:text="${c1}"></td>
+                        <td th:text="${c2}"></td>
+                        <td th:text="${c3}"></td>
+                        <td th:text="${c4}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Display the leading candidate -->
+            <h3 th:if="${leadingCandidate != null}" th:text="'Leading Candidate: ' + ${leadingCandidate}"></h3>
+
+            <!-- Add a link to open the elections site -->
+            <p>Explore more on the <a href="https://www.eci.gov.in/" target="_blank">Elections Site</a>></p>
+
+        </section>
+    </div>
+</body>
+</html>

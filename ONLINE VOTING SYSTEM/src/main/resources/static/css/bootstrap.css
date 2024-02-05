@@ -1,0 +1,50 @@
+/* Updated Layout Styles */
+.col-main {
+  flex: 2; /* Adjusted the flex value for the main column to make it larger */
+}
+
+.col-complementary {
+  flex: 1;
+}
+
+/* Responsive Styles */
+@media only screen and (min-width: 640px) {
+  .layout {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  }
+
+  .col {
+    flex: 1; /* Make columns evenly distribute space on larger screens */
+  }
+}
+
+/* Body and Container Styles */
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif; /* Updated font family for a clean look */
+  background-color: #f9f9f9; /* Light background color */
+}
+
+.container {
+  max-width: 60em;
+  margin: 0 auto;
+  overflow: hidden; /* Clearfix to contain floated columns */
+}
+
+/* Column Styles */
+.col {
+  padding: 1.5em;
+  margin: 0 0 1.5em 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Added rounded corners for a classic look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow for depth */
+  overflow: hidden; /* Hide overflowing content for a mirror effect */
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)); /* Add a subtle mirror effect */
+}
+
+/* Table Row Styles */
+tr {
+  line-height: 1.5; /* Adjusted line height for better readability */
+}

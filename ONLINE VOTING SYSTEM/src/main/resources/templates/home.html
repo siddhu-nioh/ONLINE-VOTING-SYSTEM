@@ -1,0 +1,78 @@
+<!-- <!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class="center">
+		<div class="text-center">
+		
+			
+			<h1 class="font-weight-bold">WELCOME TO ONLINE VOTING</h1>
+			
+			<div th:if=${session.msg}>
+			<h3 th:text="${session.msg}" style="color:red"></h3>
+   			<th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+   
+   		</div>
+	
+		</div>
+		
+	
+	</section>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Online Voting Application</title>
+
+    <!-- Add your custom stylesheets or link to a CSS file -->
+    <style>
+        body {
+            background-color: #f2dbee;
+			background-image: url("https://img.freepik.com/premium-vector/make-change-vote-better-india-font-with-sticker-style-indian-voter-hand-tricolor-brush-stroke-effect-white-background_1302-31476.jpg?w=740");
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(121, 67, 188));
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <section class="center">
+        <div>
+            <h1>Welcome to Online Voting Application</h1>
+            <h2>Be The Change</h2>
+            <h2>Bring The Change</h2>
+
+            <div th:if="${session.msg}">
+                <h3 th:text="${session.msg}"></h3>
+                <th:block th:text="${#session.removeAttribute('msg')}"></th:block>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

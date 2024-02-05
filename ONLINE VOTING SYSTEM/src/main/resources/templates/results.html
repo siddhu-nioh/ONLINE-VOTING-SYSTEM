@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8" />
+    <title>Elections Dashboard</title>
+</head>
+<body>
+    <section class="center">
+
+        <h1>Elections Results</h1>
+
+        <div th:if="${session.msg}">
+            <h3 th:text="${session.msg}" style="color:red"></h3>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Candidate 1 Votes</th>
+                    <th scope="col">Candidate 2 Votes</th>
+                    <th scope="col">Candidate 3 Votes</th>
+                    <th scope="col">Candidate 4 Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Display total votes for each candidate -->
+                <tr>
+                    <td th:text="${c1}"></td>
+                    <td th:text="${c2}"></td>
+                    <td th:text="${c3}"></td>
+                    <td th:text="${c4}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Display the leading candidate -->
+        <h3 th:if="${leadingCandidate != null}" th:text="'Leading Candidate: ' + ${leadingCandidate}" style="color: rgb(100, 30, 221)"></h3>
+
+        <!-- Display the winner -->
+        <h3 th:if="${winner != null}" th:text="'Winner: ' + ${winner}" style="color: rgb(23, 46, 252)"></h3>
+
+        <br>
+    </section>
+</body>
+</html>

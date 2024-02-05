@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>About</title>
+    <style>
+        body {
+            background-color: #d63a3a; /* Set background color */
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #3498db; /* Set background color for heading */
+            color: rgb(236, 34, 34);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        section {
+            background-color: #36c7ec; /* Set background color for the section */
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            transform: scaleY(-1); /* Mirror effect */
+        }
+
+        /* Style the marquee content */
+        marquee::before {
+            content: attr(data-content);
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="center">
+        <h1>About</h1>
+        <div th:if=${session.msg}>
+            <h3 th:text="${session.msg}" style="color:red"></h3>
+            <div th:text="${@sessionUtilityBean.removeVerificationMessageFromSession()}"></div>
+        </div>
+        <br>
+    </section>
+
+    <section>
+        <!-- Add data-content attribute for marquee content -->
+        <marquee data-content="Hello! Welcome to the Election application. Here you get all the details regarding elections.">
+            Hello! Welcome to the Election application. Here you get all the details regarding elections.
+        </marquee>
+    </section>
+</body>
+
+</html>

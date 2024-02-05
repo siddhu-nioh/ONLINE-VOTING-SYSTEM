@@ -1,0 +1,12 @@
+create database online_voting_system; 
+use online_voting_system; 
+select * from candidates;
+alter table candidates drop column age;
+alter table candidates drop column email;
+use voting;
+select * from admin;
+show tables;
+Select * from voters;
+set sql_safe_updates=0;
+update  voters set age=19;
+Select * from roles;
